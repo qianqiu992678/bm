@@ -1,0 +1,83 @@
+1，vue项目中登录页面问题：登录的form表单，跳转的时候会自动加上问号（？），
+	会重刷页面，导致登录需要两次
+	如果确实需要form，需要click.prevent
+	<button @click.prevent="onSubmit" :plain="true">登录</button>
+	
+2，vue-router 加上mode:'history',去掉#号，
+3，接线图：	currentData.bodyData:每一节电池的数据
+			currentData.headData:电池串信息
+		
+
+/*
+跨域问题总结：客户端http://localhost:8080,服务端：http://127.0.0.1:3000
+1，res.header("Access-Control-Allow-Origin","*");
+	浏览器每一个请求会发两次，第一次type为OPTIONS,测试服务能不能响应该域请求，
+	返回ok为通过，第二次请求就可以获取到数据
+2，res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+	设置服务能够响应OPTIONS的请求
+3，跨域不会携带cookie问题，将access_token放在headers里传过去
+	headers: {
+		'access_token': $.cookie('access_token')
+	},
+4，服务端设置接收请求头允许access_token
+	res.header("Access-Control-Allow-Headers", "access_token,Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+5，a连接下载excel不会携带headers问题（但是会携带http://127.0.0.1:3000的cookie，所以可以用下边3.1解决）
+	服务器对此请求不检测access_token
+
+
+3.1，跨域不携带cookie问题
+	xhrFields:{
+		withCredentials: true,
+	},
+	此时服务端"Access-Control-Allow-Origin"的值不可以是‘*’，只能添加白名单
+	服务点还需设置res.header("Access-Control-Allow-Credentials","true");
+	但此时携带的cookies是http://127.0.0.1:3000域名下的cookie还需要在登录成功时服务端保存cookie
+	res.cookie("access_token", result[0].token, {maxAge: 1000*60*60*24*30,httpOnly: true});
+	a链接是可以携带cookie的，而且正好是http://127.0.0.1:3000的cookie，问题4也就解决了
+ */	
+		
+		
+		
+svg文件编译规则：
+1，格式  alert(json)
+	alert('{"widget_name":"lampBS_WIDGET","address":"3","signalType":"yaoxin"}')
+2，常见属性： widget_name:组件名  命名规则    xxx_WIDGET --必填
+			address:点表对应地址  number
+			signalType:信号类型（yaoxin/yaoce/yaomai/yaokong）
+3，
+highstock下通过xAxis.categories=['name1','name2']自定义x轴刻度无效
+	可以通过xAxis.labels.formatter:function(){return 'name'+this.pos}
+	labels: {
+		formatter:function(){
+			return this.pos+1+'号电池'
+		}
+	}
+
+
+/*
+跨域问题总结：客户端http://localhost:8080,服务端：http://127.0.0.1:3000
+1，res.header("Access-Control-Allow-Origin","*");
+	浏览器每一个请求会发两次，第一次type为OPTIONS,测试服务能不能响应该域请求，
+	返回ok为通过，第二次请求就可以获取到数据
+2，res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+	设置服务能够响应OPTIONS的请求
+3，跨域不会携带cookie问题，将access_token放在headers里传过去
+	headers: {
+		'access_token': $.cookie('access_token')
+	},
+4，服务端设置接收请求头允许access_token
+	res.header("Access-Control-Allow-Headers", "access_token,Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+5，a连接下载excel不会携带headers问题（但是会携带http://127.0.0.1:3000的cookie，所以可以用下边3.1解决）
+	服务器对此请求不检测access_token
+
+
+3.1，跨域不携带cookie问题
+	xhrFields:{
+		withCredentials: true,
+	},
+	此时服务端"Access-Control-Allow-Origin"的值不可以是‘*’，只能添加白名单
+	服务点还需设置res.header("Access-Control-Allow-Credentials","true");
+	但此时携带的cookies是http://127.0.0.1:3000域名下的cookie还需要在登录成功时服务端保存cookie
+	res.cookie("access_token", result[0].token, {maxAge: 1000*60*60*24*30,httpOnly: true});
+	a链接是可以携带cookie的，而且正好是http://127.0.0.1:3000的cookie，问题4也就解决了
+ */

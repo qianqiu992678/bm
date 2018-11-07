@@ -1,0 +1,6 @@
+1，指示灯A   lampA_WIDGET  需要svgInitFun()
+	alert('{"widget_name":"lampA_WIDGET","address":"2","signalType":"yaoxin"}')
+2，指示灯B   lampB_WIDGET  需要svgInitFun(),并且有css支持
+	alert('{"widget_name":"lampB_WIDGET","address":"2","signalType":"yaoxin"}')
+3，普通显示开关A  switchA_WIDGET  
+	alert('{"widget_name":"switchA_WIDGET","address":"2","signalType":"yaoxin"}')

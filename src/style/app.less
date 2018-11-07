@@ -1,0 +1,406 @@
+html,body{
+    height: 100%;
+    min-height: 600px;
+}
+ul,ol{
+    list-style: none;
+}
+*:focus {
+    outline: 0 !important;
+}
+body{
+    min-width: 980px;
+}
+th {
+    text-align: inherit;
+}
+*{
+    user-select: none;
+}
+.h1, .h2, .h3, .h4, .h5, .h6,ul,li,p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color:#000;
+    
+}
+a:hover, a:focus {
+    text-decoration: none;
+    color:#2177ba;
+}
+.td-input{
+    width: 90%;
+    border: none;
+    text-align: center;
+}
+@danger-color:#D9544F;
+
+@border-color:#aaa;
+@success-color:#5BB85D;
+@warning-color:#EFAD4D;
+@theme-color:#337AB7;
+@default-color:#aaa;
+@active-color:darken(@theme-color,5%);
+.twoWordWidth{
+    display: inline-block;
+    width: 30px;
+}
+//鼠标样式
+.cursor-pointer(){
+    cursor: pointer;
+}
+//短语
+.danger-word{
+    color:@danger-color;
+    .cursor-pointer(); 
+};
+.hot-word{
+    color:@active-color;
+    .cursor-pointer()
+};
+.warning-word{
+    color:@warning-color;
+    .cursor-pointer()
+};
+.yx-date-formGroup{
+    >input{
+        width: 160px;
+    }
+}
+//按钮样式
+.yx-btn-active{
+    background-color: @active-color;
+    color: #fff;
+    &:hover{color:#fff;background-color: darken(@active-color,10%);}
+}
+.yx-btn-danger{
+    background-color: @danger-color;
+    color: #fff;
+    &:hover{color:#fff;background-color: darken(@danger-color,10%);}
+}
+.yx-btn-warning{
+    background-color: @warning-color;
+    color: #fff;
+    &:hover{color:#fff;background-color: darken(@warning-color,10%);}
+}
+.yx-btn-cancel{
+    background-color: @default-color;
+    color: #fff;
+    &:hover{color:#fff;background-color: darken(@default-color,10%);}
+}
+
+.lineInput{
+    border: 0;
+    border-bottom: 1px solid #aaa;
+}
+.marginBottom10{margin-bottom:10px;}
+.marginTop10{margin-top:10px;}
+.marginLeft10{margin-left:10px;}
+.marginRight10{margin-right:10px;}
+//表格
+.yx-table{
+    overflow: auto;
+    .yx-tableInfo{
+        width: 100%;
+        border: 1px solid @border-color;
+        border-left: 0;
+        font-size: 12px;
+        td{
+            word-break: keep-all;
+            white-space: nowrap;
+            font-size: 13px;
+            color: #333;
+            padding: 0 8px;
+            border: 1px solid @border-color;
+            border-left: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            b{
+                display: inline-block;
+                width: 30px;
+            }
+            input,select{
+                border: 0;
+                background: inherit;
+            }
+        }
+        thead{
+            //background: #ddd;
+            background: lighten(@active-color,40%);
+            font-weight: bold;
+            line-height: 30px;
+            height: 30px;
+            display: block;
+            margin-right: 17px;
+            td{
+                cursor: pointer;
+                .orderIndicate{
+                    float: right;
+                }
+            }
+            
+        }
+        tr{
+            display:table;
+            width:100%;
+            table-layout:fixed;
+        }
+        tbody{
+            display: block;
+            overflow-y: scroll; 
+            line-height: 36px;
+        }
+    }
+}
+//表头固定表格
+.headFixedTable(){
+    thead{
+        display: inline-block;
+        height: 37px;
+        margin-right: 17px;
+    }
+    tr{
+        display:table;
+        width:100%;
+        table-layout:fixed;
+    }
+    tbody{
+        max-height: 400px;
+        display: block;
+        overflow-y: scroll; 
+        line-height: 36px;
+    }
+}
+//分页
+.yx-paginate{
+    
+    .page-item,.paginate-prev,.paginate-next{
+        float:left;
+        border: 1px solid @border-color;
+        border-radius: 11px;
+        width: 30px;
+        height: 22px;
+        margin-right: 3px;
+        &.paginate-view{
+            border: 0;
+            &:hover{
+                background: inherit;
+                >a{
+                    color: inherit;
+                }
+            }
+        }
+        &.paginate-prev,&.paginate-next{
+            width: 80px;
+        }
+        &:hover{
+            background: @active-color;
+            >a{
+                color: #fff;
+            }
+        }
+        &.active{
+            background: @active-color;
+            >a{
+                color: #fff;
+            }
+        }
+        >a{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+        }
+    }
+}
+//模态框body最大高度
+.modal-dialog(@maxheight:450px){
+    .modal-body{
+        overflow: auto;
+        max-height: @maxheight;
+    }
+}
+//编辑面板
+.edit-panel{
+    .list-item{
+        padding: 6px;
+        .item-title{
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 1px solid @border-color;
+            text-align: left;
+            padding: 0 0 12px;
+        }
+        .item-content{
+            width: 100%;
+            li{
+                padding: 6px 0;
+                >.item-label{
+                    display: inline-block;
+                    width: calc(~"40% - 4px");
+                    text-align: right;
+                }
+                >input{
+                    border: 0;
+                    border-bottom: 1px solid #aaa;
+                    width: 60%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+//.editPanel-details{
+//  .details-item{
+//      margin-bottom:8px;
+//  }
+//  .editPanelDetails-label{
+//      display: inline-block;
+//      width: calc(~"40% - 16px");
+//      text-align: right;
+//      margin-right: 12px;
+//  }
+//  .editPanelDetails-value{
+//      width: 60%;
+//  }
+//}
+//切换按钮
+.checkbox-true {
+    label {
+        width: 50px;
+        background: @active-color;
+        height: 25px;
+        border-radius: 12px;
+        position: relative;
+        top: 5px;
+        >input {
+            display: none;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border-radius: 50%;
+            margin-left: 27px;
+            margin-bottom: -6px;
+        }
+        >span {
+            color: #fff;
+            position: absolute;
+            left: 8px;
+            bottom: 2px;
+        }
+    }
+}
+.checkbox-false {
+    label {
+        width: 50px;
+        background: #ccc;
+        height: 25px;
+        border-radius: 12px;
+        position: relative;
+        top: 5px;
+        >input {
+            display: none;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border-radius: 50%;
+            margin-left: -20px;
+            margin-bottom: -6px;
+        }
+        >span {
+            color: #fff;
+            position: absolute;
+            right: 8px;
+            bottom: 2px;
+        }
+    }
+}
+.form-inline{
+    text-align: left;
+}
+//面板返回按钮
+.panel-heading{
+    position: relative;
+    >.btn{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+}
+.main-container{
+    padding: 3px;
+    height: 100%;//calc(~"100% - 10px");
+    overflow: auto;
+}
+.runStatus-summary{
+    border: 1px solid @border-color;
+    background: #fff;
+    overflow:hidden;
+    padding: 24px 6px 6px;
+    box-shadow: 2px 2px 2px 1px;
+    border-radius: 6px;
+    >.handle{
+        top: 0;
+        width: 100%;
+        left: 0;
+        height:20px;
+        margin-left: 0;
+        border: 0px;
+        background: @active-color;
+    }
+    >.glyphicon{
+        float: right;
+        margin-top: -22px;
+        color: #fff;
+    }
+    >.edit-panel{
+        height: calc(~"100% - 10px");
+        overflow: auto;
+    }
+}
+@keyframes lampB_WIDGET_animation {
+    0% {
+       //transform: rotate(0deg);
+       fill: #ffff00;
+    }
+    50% {
+      //transform: rotate(360deg);
+      fill: #00ffff;
+    }
+    100% {
+      //transform: rotate(360deg);
+      fill: #ffff00;
+    }
+}
+svg{
+    [id^="lampB_WIDGET"]{
+        &.alarm{
+            [id^='colorIndicate']{
+                //fill:red;
+                animation:lampB_WIDGET_animation 1s linear infinite;
+            }
+        }
+        &.reset{
+            [id^='colorIndicate']{
+                fill:green;
+            }
+        }
+    }
+}
+//jquery-datetimepicker
+.xdsoft_datetimepicker{
+    z-index: 99;
+}

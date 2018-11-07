@@ -1,0 +1,373 @@
+html,
+body {
+  height: 100%;
+  min-height: 600px;
+}
+ul,
+ol {
+  list-style: none;
+}
+*:focus {
+  outline: 0 !important;
+}
+body {
+  min-width: 980px;
+}
+th {
+  text-align: inherit;
+}
+* {
+  user-select: none;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #2177ba;
+}
+.td-input {
+  width: 90%;
+  border: none;
+  text-align: center;
+}
+.twoWordWidth {
+  display: inline-block;
+  width: 30px;
+}
+.danger-word {
+  color: #D9544F;
+  cursor: pointer;
+}
+.hot-word {
+  color: #2d6da3;
+  cursor: pointer;
+}
+.warning-word {
+  color: #EFAD4D;
+  cursor: pointer;
+}
+.yx-date-formGroup > input {
+  width: 160px;
+}
+.yx-btn-active {
+  background-color: #2d6da3;
+  color: #fff;
+}
+.yx-btn-active:hover {
+  color: #fff;
+  background-color: #22527b;
+}
+.yx-btn-danger {
+  background-color: #D9544F;
+  color: #fff;
+}
+.yx-btn-danger:hover {
+  color: #fff;
+  background-color: #c9312c;
+}
+.yx-btn-warning {
+  background-color: #EFAD4D;
+  color: #fff;
+}
+.yx-btn-warning:hover {
+  color: #fff;
+  background-color: #eb971e;
+}
+.yx-btn-cancel {
+  background-color: #aaa;
+  color: #fff;
+}
+.yx-btn-cancel:hover {
+  color: #fff;
+  background-color: #919191;
+}
+.lineInput {
+  border: 0;
+  border-bottom: 1px solid #aaa;
+}
+.marginBottom10 {
+  margin-bottom: 10px;
+}
+.marginTop10 {
+  margin-top: 10px;
+}
+.marginLeft10 {
+  margin-left: 10px;
+}
+.marginRight10 {
+  margin-right: 10px;
+}
+.yx-table {
+  overflow: auto;
+}
+.yx-table .yx-tableInfo {
+  width: 100%;
+  border: 1px solid #aaa;
+  border-left: 0;
+  font-size: 12px;
+}
+.yx-table .yx-tableInfo td {
+  word-break: keep-all;
+  white-space: nowrap;
+  font-size: 13px;
+  color: #333;
+  padding: 0 8px;
+  border: 1px solid #aaa;
+  border-left: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.yx-table .yx-tableInfo td b {
+  display: inline-block;
+  width: 30px;
+}
+.yx-table .yx-tableInfo td input,
+.yx-table .yx-tableInfo td select {
+  border: 0;
+  background: inherit;
+}
+.yx-table .yx-tableInfo thead {
+  background: #b3d0ea;
+  font-weight: bold;
+  line-height: 30px;
+  height: 30px;
+  display: block;
+  margin-right: 17px;
+}
+.yx-table .yx-tableInfo thead td {
+  cursor: pointer;
+}
+.yx-table .yx-tableInfo thead td .orderIndicate {
+  float: right;
+}
+.yx-table .yx-tableInfo tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.yx-table .yx-tableInfo tbody {
+  display: block;
+  overflow-y: scroll;
+  line-height: 36px;
+}
+.yx-paginate .page-item,
+.yx-paginate .paginate-prev,
+.yx-paginate .paginate-next {
+  float: left;
+  border: 1px solid #aaa;
+  border-radius: 11px;
+  width: 30px;
+  height: 22px;
+  margin-right: 3px;
+}
+.yx-paginate .page-item.paginate-view,
+.yx-paginate .paginate-prev.paginate-view,
+.yx-paginate .paginate-next.paginate-view {
+  border: 0;
+}
+.yx-paginate .page-item.paginate-view:hover,
+.yx-paginate .paginate-prev.paginate-view:hover,
+.yx-paginate .paginate-next.paginate-view:hover {
+  background: inherit;
+}
+.yx-paginate .page-item.paginate-view:hover > a,
+.yx-paginate .paginate-prev.paginate-view:hover > a,
+.yx-paginate .paginate-next.paginate-view:hover > a {
+  color: inherit;
+}
+.yx-paginate .page-item.paginate-prev,
+.yx-paginate .paginate-prev.paginate-prev,
+.yx-paginate .paginate-next.paginate-prev,
+.yx-paginate .page-item.paginate-next,
+.yx-paginate .paginate-prev.paginate-next,
+.yx-paginate .paginate-next.paginate-next {
+  width: 80px;
+}
+.yx-paginate .page-item:hover,
+.yx-paginate .paginate-prev:hover,
+.yx-paginate .paginate-next:hover {
+  background: #2d6da3;
+}
+.yx-paginate .page-item:hover > a,
+.yx-paginate .paginate-prev:hover > a,
+.yx-paginate .paginate-next:hover > a {
+  color: #fff;
+}
+.yx-paginate .page-item.active,
+.yx-paginate .paginate-prev.active,
+.yx-paginate .paginate-next.active {
+  background: #2d6da3;
+}
+.yx-paginate .page-item.active > a,
+.yx-paginate .paginate-prev.active > a,
+.yx-paginate .paginate-next.active > a {
+  color: #fff;
+}
+.yx-paginate .page-item > a,
+.yx-paginate .paginate-prev > a,
+.yx-paginate .paginate-next > a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.edit-panel .list-item {
+  padding: 6px;
+}
+.edit-panel .list-item .item-title {
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  text-align: left;
+  padding: 0 0 12px;
+}
+.edit-panel .list-item .item-content {
+  width: 100%;
+}
+.edit-panel .list-item .item-content li {
+  padding: 6px 0;
+}
+.edit-panel .list-item .item-content li > .item-label {
+  display: inline-block;
+  width: calc(40% - 4px);
+  text-align: right;
+}
+.edit-panel .list-item .item-content li > input {
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  width: 60%;
+  display: inline-block;
+}
+.checkbox-true label {
+  width: 50px;
+  background: #2d6da3;
+  height: 25px;
+  border-radius: 12px;
+  position: relative;
+  top: 5px;
+}
+.checkbox-true label > input {
+  display: none;
+}
+.checkbox-true label:after {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 27px;
+  margin-bottom: -6px;
+}
+.checkbox-true label > span {
+  color: #fff;
+  position: absolute;
+  left: 8px;
+  bottom: 2px;
+}
+.checkbox-false label {
+  width: 50px;
+  background: #ccc;
+  height: 25px;
+  border-radius: 12px;
+  position: relative;
+  top: 5px;
+}
+.checkbox-false label > input {
+  display: none;
+}
+.checkbox-false label:after {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: -20px;
+  margin-bottom: -6px;
+}
+.checkbox-false label > span {
+  color: #fff;
+  position: absolute;
+  right: 8px;
+  bottom: 2px;
+}
+.form-inline {
+  text-align: left;
+}
+.panel-heading {
+  position: relative;
+}
+.panel-heading > .btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.main-container {
+  padding: 3px;
+  height: 100%;
+  overflow: auto;
+}
+.runStatus-summary {
+  border: 1px solid #aaa;
+  background: #fff;
+  overflow: hidden;
+  padding: 24px 6px 6px;
+  box-shadow: 2px 2px 2px 1px;
+  border-radius: 6px;
+}
+.runStatus-summary > .handle {
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 20px;
+  margin-left: 0;
+  border: 0px;
+  background: #2d6da3;
+}
+.runStatus-summary > .glyphicon {
+  float: right;
+  margin-top: -22px;
+  color: #fff;
+}
+.runStatus-summary > .edit-panel {
+  height: calc(100% - 10px);
+  overflow: auto;
+}
+@keyframes lampB_WIDGET_animation {
+  0% {
+    fill: #ffff00;
+  }
+  50% {
+    fill: #00ffff;
+  }
+  100% {
+    fill: #ffff00;
+  }
+}
+svg [id^="lampB_WIDGET"].alarm [id^='colorIndicate'] {
+  animation: lampB_WIDGET_animation 1s linear infinite;
+}
+svg [id^="lampB_WIDGET"].reset [id^='colorIndicate'] {
+  fill: green;
+}
+.xdsoft_datetimepicker {
+  z-index: 99;
+}
